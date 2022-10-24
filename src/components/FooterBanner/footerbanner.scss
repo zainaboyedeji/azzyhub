@@ -1,0 +1,30 @@
+.footerBanner {
+    padding: 5px 15rem;
+    margin-top: 5rem;
+    text-align: center;
+
+    .bannerDesc {
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        h6 {
+            margin-top: 2rem;
+            font-family: "Raleway Bold";
+        }
+
+        p {
+            color: #555;
+            font-family: "Raleway Bold";
+            font-size: 14px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1189px) {
+    .footerBanner {
+        padding: 0.5rem 0.5rem !important;
+        flex-wrap: wrap;
+    }
+}

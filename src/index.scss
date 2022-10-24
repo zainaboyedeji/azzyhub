@@ -1,0 +1,94 @@
+@import "./config/variables.scss";
+
+
+//Raleway
+@font-face {
+    font-family: $font-black;
+    src: url("./fonts/Raleway-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-blackitalic;
+    src: url("./fonts/Raleway-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-bold;
+    src: url("./fonts/Raleway-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-bolditalic;
+    src: url("./fonts/Raleway-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-extrabold;
+    src: url("./fonts/Raleway-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-extrabolditalic;
+    src: url("./fonts/Raleway-ExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-extralight;
+    src: url("./fonts/Raleway-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-extralightitalic;
+    src: url("./fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-italic;
+    src: url("./fonts/Raleway-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-light;
+    src: url("./fonts/Raleway-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-lightitalic;
+    src: url("./fonts/Raleway-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-medium;
+    src: url("./fonts/Raleway-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-mediumitalic;
+    src: url("./fonts/Raleway-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-regular;
+    src: url("./fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-semibold;
+    src: url("./fonts/Raleway-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-semibolditalic;
+    src: url("./fonts/Raleway-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-thin;
+    src: url("./fonts/Raleway-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $font-thinitalic;
+    src: url("./fonts/Raleway-ThinItalic.ttf") format("truetype");
+}
+

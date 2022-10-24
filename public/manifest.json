@@ -1,0 +1,25 @@
+{
+  "short_name": "Azzyhub",
+  "name": "Azzyhub",
+  "icons": [
+    {
+      "src": "azzyhub.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "azzyhub.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "azzyhub.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,35 @@
+.mainCheckout {
+    background-color: white;
+    padding: 1rem;
+    width:45%;
+}
+
+.saveContinue {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+.appDivider{
+    border-bottom: 1px solid #dee2e6!important;;
+}
+.appBold{
+    font-family: "Raleway Bold";
+}
+.paymentBack{
+    background-color: black;
+    color:white;
+    font-size: 12px;
+}
+.paymentPay{
+    background-color:#1976d2;;
+    color:white;
+    font-size: 12px;
+}
+.sumImage{
+    width:8rem;
+    height:8rem;
+    margin-right: 1rem;
+}

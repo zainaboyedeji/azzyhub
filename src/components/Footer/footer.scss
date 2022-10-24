@@ -1,0 +1,85 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+    .footerInfo {
+        .subStyle {
+            h6 {
+                font-family: "Raleway Bold";
+                font-size: 14px;
+            }
+            p {
+                font-size: 12px;
+            }
+            .input-group {
+                input {
+                    border-radius: 5rem;
+                    background: #292c30;
+                    color: #777;
+                    font-size: 12px;
+                    border: 1px solid black;
+                    padding: 1rem;
+                }
+                span {
+                    border-radius: 15px;
+                    background-color: #222;
+                    color: white;
+                    border: 1px solid black;
+                    font-size: 10px;
+                    img {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+            .footerFa {
+                margin-top: 2rem;
+                a {
+                    color:white;
+                    border:0.5px solid #313438;;
+                    padding: 6px;
+                    border-radius: 100%;
+                    margin-right: 1rem;
+                    svg {
+                        width: 0.8rem;
+                        height: 0.8rem;
+                    }
+                }
+            }
+        }
+
+        .footerList {
+            h6 {
+                font-family: "Raleway Bold";
+                font-size: 14px;
+            }
+            ul {
+                list-style: none;
+                padding: 0 !important;
+                margin: 0 !important;
+                margin-top: 1.5rem !important;
+                li {
+                    font-size: 13px;
+                    padding-bottom: 3px;
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    text-align: center;
+    background-color: black;
+    color: #777;
+    padding: 1rem;
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 1189px) {
+    .footer {
+        .footerInfo {
+            flex-direction: column;
+        }
+    }
+}

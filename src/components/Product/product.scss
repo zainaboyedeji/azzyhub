@@ -1,0 +1,11 @@
+.appProduct {
+    &:hover{
+        color:pink;
+    }
+    text-decoration: none;
+    color:black;
+        img {
+            width: 20rem;
+            height: 25rem;
+        }
+}

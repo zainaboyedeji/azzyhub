@@ -1,0 +1,43 @@
+.appReviews {
+    padding: 5px 10rem;
+    margin-top: 2rem;
+
+    h6 {
+        font-family: "Raleway Bold";
+    }
+
+    .reviews {
+        margin-top: 2rem;
+
+        .review {
+            .reviewImg {
+                margin-right: 1rem;
+
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+
+            .reviewRating {
+                img {
+                    width: 4rem;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1189px) {
+    .appReviews {
+        padding: 0.5rem 0.5rem !important;
+
+        .reviews {
+            flex-wrap: wrap;
+        }
+    }
+}
