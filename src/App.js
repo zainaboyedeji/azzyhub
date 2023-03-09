@@ -1,41 +1,41 @@
 import { useEffect, useState } from 'react';
-import { Cart  } from './components';
-import CheckoutView from './views/CheckoutView/CheckoutView';
+// import { Cart  } from './components';
+// import CheckoutView from './views/CheckoutView/CheckoutView';
 import { commerce } from './lib/commerce';
 import jwt_decode from "jwt-decode";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {LandingPage , ProductDescription , NotFoundPage} from './views';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import {LandingPage , ProductDescription , NotFoundPage} from './views';
 import './App.scss';
 
 const App = () => {
 
-  const [user,setUser] = useState({});
-  function handleCallbackResponse(response){
+  const [user, setUser] = useState({});
+  function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     var userObject = jwt_decode(response.credential)
-    console.log(userObject,"ishh");
+    console.log(userObject, "ishh");
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
   }
-  function handleSignOut(event){
+  function handleSignOut(event) {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
   }
-  useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id:"823834211204-nnaucmn8kanla5pv8f6oukdh5b10mvr4.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    });
+  // useEffect(() => {
+  //   /* global google */
+  //   google.accounts.id.initialize({
+  //     client_id: "823834211204-nnaucmn8kanla5pv8f6oukdh5b10mvr4.apps.googleusercontent.com",
+  //     callback: handleCallbackResponse
+  //   });
 
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-      {theme:"outline",size:"large"}
-    );
+  //   google.accounts.id.renderButton(
+  //     document.getElementById("signInDiv"),
+  //     { theme: "outline", size: "large" }
+  //   );
 
-    google.accounts.id.prompts();
+  //   google.accounts.id.prompts();
 
-  },[]);
+  // }, []);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [product, setProduct] = useState([]);
@@ -60,7 +60,7 @@ const App = () => {
   }
 
   const fetchSingleProduct = async (productId) => {
-    const  data  = await commerce.products.retrieve(productId);
+    const data = await commerce.products.retrieve(productId);
     setProduct(data)
   }
 
@@ -77,17 +77,17 @@ const App = () => {
     setCart(cart)
   }
 
-  const refreshCart = async () =>{
+  const refreshCart = async () => {
     const newCart = await commerce.cart.refresh();
     setCart(newCart)
   }
 
-  const handleCaptureCheckout = async (checkoutTokenId,newOrder) => {
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
     try {
-      const incomingOrder = await commerce.checkout.capture(checkoutTokenId,newOrder);
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
       setOrder(incomingOrder)
       refreshCart()
-    }catch(error){
+    } catch (error) {
       setErrorMessage(error.data.error.message)
 
     }
@@ -117,13 +117,13 @@ const App = () => {
   return (
     <div className='App'>
       <div id="signInDiv"></div>
-      {Object.keys(user).length != 0 && <button onClick={(e) => handleSignOut(e)}>Sign Out</button>}
-      
-      { user && 
-      <div> 
-        
-        <h3>{user.name}</h3>
-      </div>
+      {Object.keys(user).length !== 0 && <button onClick={(e) => handleSignOut(e)}>Sign Out</button>}
+
+      {user &&
+        <div>
+
+          <h3>{user.name}</h3>
+        </div>
       }
 
     </div>
