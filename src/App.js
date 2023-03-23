@@ -1,15 +1,19 @@
+import * as React from 'react';
 import { useEffect, useState } from 'react';
-// import { Cart  } from './components';
-// import CheckoutView from './views/CheckoutView/CheckoutView';
+import { Cart } from './components';
+import CheckoutView from './views/CheckoutView/CheckoutView';
 import { commerce } from './lib/commerce';
 import jwt_decode from "jwt-decode";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import {LandingPage , ProductDescription , NotFoundPage} from './views';
-import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LandingPage, ProductDescription, NotFoundPage } from './views';
+import SubscribeModal from "./components/Modals/SubscribeModal/SubscribeModal";
 
 const App = () => {
+  const google = window.google;
+  const [open, setOpen] = React.useState(false);
 
   const [user, setUser] = useState({});
+
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     var userObject = jwt_decode(response.credential)
@@ -33,9 +37,15 @@ const App = () => {
   //     { theme: "outline", size: "large" }
   //   );
 
-  //   google.accounts.id.prompts();
+  //   google.account?.id.prompt();
 
   // }, []);
+
+  useEffect(() => {
+    console.log('modal',open,1)
+    setOpen(true)
+   
+  }, []);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [product, setProduct] = useState([]);
@@ -43,7 +53,7 @@ const App = () => {
 
   const [products, setProducts] = useState([]);
 
-
+  console.log('modal',open,2)
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
@@ -115,27 +125,29 @@ const App = () => {
 
 
   return (
-    <div className='App'>
-      <div id="signInDiv"></div>
+    <>
+      {/* <div id="signInDiv"></div>
       {Object.keys(user).length !== 0 && <button onClick={(e) => handleSignOut(e)}>Sign Out</button>}
 
       {user &&
         <div>
-
+          <img src={user.picture}></img>
           <h3>{user.name}</h3>
         </div>
-      }
-
-    </div>
-    // <Router>
-    //     <Routes>
-    //       <Route index path="/" element={ <LandingPage/>  } />
-    //       <Route path="/product-description/:productId" element={ <ProductDescription fetchSingleProduct={fetchSingleProduct} product={product} handleAddToCart={handleAddToCart} products={products}/>  } />
-    //       <Route path="/cart" element={<Cart cart={cart} handleEmptyCart={handleEmptyCart} handleRemovefromCart={handleRemovefromCart} handleUpdateCartQty={handleUpdateCartQty} />} />
-    //       <Route path="/checkout" element={<CheckoutView cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage}/>} />
-    //       <Route path="*" element={<NotFoundPage />} />
-    //     </Routes>
-    // </Router>
+      }*/}
+      <SubscribeModal /> 
+      {/* {open ? <BasicModal open={open}/> : null} */}
+      {/* <BasicModal/> */}
+      <Router>
+        <Routes>
+          <Route index path="/" element={<LandingPage />} />
+          <Route path="/product-description/:productId" element={<ProductDescription fetchSingleProduct={fetchSingleProduct} product={product} handleAddToCart={handleAddToCart} products={products} />} />
+          <Route path="/cart" element={<Cart cart={cart} handleEmptyCart={handleEmptyCart} handleRemovefromCart={handleRemovefromCart} handleUpdateCartQty={handleUpdateCartQty} />} />
+          <Route path="/checkout" element={<CheckoutView cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
 

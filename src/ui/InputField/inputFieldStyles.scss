@@ -1,0 +1,53 @@
+
+
+.inputField__label {
+  display: grid;
+  grid-row-gap: 10px;
+  color: red;
+  font-size: 16px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.inputField__field {
+  background-color: green;
+  border: none;
+  font-size: 16px;
+  padding: 16px 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  font-weight: bold;
+  color: red;
+
+
+}
+
+::placeholder { /* Firefox */
+  font-weight: normal;
+  color: yellow
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: yellow;
+  font-weight: normal;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: yellow;
+  font-weight: normal;
+}
+
+input[disabled] {
+  background-color: red;
+  cursor: default;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+
+  &:hover {
+    background-color: red;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    transform: scale(1);
+  }
+}

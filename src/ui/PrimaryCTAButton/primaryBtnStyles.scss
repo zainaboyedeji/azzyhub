@@ -1,0 +1,45 @@
+@use "../../sassStyles/_variables" as v;
+@use "../../sassStyles/mixins" as m;
+
+.primaryBtn {
+  background-color: v.$highlight1;
+  border-style: none;
+  font-weight: bold;
+  color: v.$primary;
+  box-shadow: 0 4px 23px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+  &--normal {
+    padding: 8px 18px;
+    font-size: 16px;
+
+  }
+
+  &--big {
+    padding: 10px 30px;
+    font-size: 20px;
+
+  
+  }
+
+  &:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    transform: scale(0.98);
+    background-color: darken(v.$highlight1, 10);
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+}
