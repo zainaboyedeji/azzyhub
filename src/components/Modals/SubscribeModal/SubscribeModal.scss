@@ -1,0 +1,49 @@
+.MuiBox-root {
+    .closeIcon{
+        cursor:pointer;
+    }
+    .popUpModal {
+        width: 100%;
+
+        .popUpModalImage {
+            width: 45%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .popUpModalWelcome {
+            width: 45%;
+
+            form {
+                h3 {
+                    font-family: "Raleway Bold"
+                }
+
+                p {
+                    font-family: "Raleway Regular"
+                }
+
+               .primaryBtn{
+                    color: black;
+                    width: 100%;
+                    border: 1px solid transparent;
+                    display: block;
+                    padding: 12px 4px;
+                    font-size: 12px;
+                    background: #ffffff;
+                    text-align: center;
+                    font-family: Futura, sans-serif;
+                    font-weight: 400;
+                    line-height: 20px;
+                    border-radius: 11.5px;
+                    letter-spacing: 0.8px;
+                    text-transform: uppercase;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

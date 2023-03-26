@@ -64,7 +64,7 @@ const Footer = () => (
       </div>
     </div>
     <Divider />
-    <div className='copyright'>© Azzyhub. 2022. All Rights Reserved By Zainab Oyedeji</div>
+    <div className='copyright'>© Azzyhub. 2023. All Rights Reserved By Zainab Oyedeji</div>
   </>
 )
 

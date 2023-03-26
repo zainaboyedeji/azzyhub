@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import InputField from "../../../ui/InputField/inputField";
+import "./SubscribeModal.scss";
 
 const CustomForm = ({ status, message, onValidated }) => {
-
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -34,8 +34,6 @@ const CustomForm = ({ status, message, onValidated }) => {
 
     return (
         <form className="mc__form" onSubmit={(e) => handleSubmit(e)}>
-
-
             <h3 className="mc__title">
                 {status === "success"
                     ? "Success!"
@@ -60,8 +58,8 @@ const CustomForm = ({ status, message, onValidated }) => {
                     dangerouslySetInnerHTML={{ __html: message }}
                 />
             )}
-
-
+            <p>SUBSCRIBE and get 10% off your first order</p>
+            <p>Be the first to know about sales, promotions and free products.</p>
             <div className="mc__field-container">
                 <InputField
                     label="First Name"
@@ -71,7 +69,6 @@ const CustomForm = ({ status, message, onValidated }) => {
                     placeholder="Jane"
                     isRequired
                 />
-
                 <InputField
                     label="Last Name"
                     onChangeHandler={setLastName}
@@ -80,7 +77,6 @@ const CustomForm = ({ status, message, onValidated }) => {
                     placeholder="Doe"
                     isRequired
                 />
-
                 <InputField
                     label="Email"
                     onChangeHandler={setEmail}
@@ -89,9 +85,7 @@ const CustomForm = ({ status, message, onValidated }) => {
                     placeholder="your@email.com"
                     isRequired
                 />
-
             </div>
-
             <InputField
                 label="subscribe"
                 type="submit"
