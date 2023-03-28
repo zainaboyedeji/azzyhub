@@ -1,59 +1,18 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import { Cart } from './components';
 import CheckoutView from './views/CheckoutView/CheckoutView';
 import { commerce } from './lib/commerce';
-import jwt_decode from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LandingPage, ProductDescription, NotFoundPage } from './views';
 import SubscribeModal from "./components/Modals/SubscribeModal/SubscribeModal";
 
 const App = () => {
-  const google = window.google;
-  const [open, setOpen] = React.useState(false);
-
-  const [user, setUser] = useState({});
-
-  function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    var userObject = jwt_decode(response.credential)
-    console.log(userObject, "ishh");
-    setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
-  }
-  function handleSignOut(event) {
-    setUser({});
-    document.getElementById("signInDiv").hidden = false;
-  }
-  // useEffect(() => {
-  //   /* global google */
-  //   google.accounts.id.initialize({
-  //     client_id: "823834211204-nnaucmn8kanla5pv8f6oukdh5b10mvr4.apps.googleusercontent.com",
-  //     callback: handleCallbackResponse
-  //   });
-
-  //   google.accounts.id.renderButton(
-  //     document.getElementById("signInDiv"),
-  //     { theme: "outline", size: "large" }
-  //   );
-
-  //   google.account?.id.prompt();
-
-  // }, []);
-
-  useEffect(() => {
-    console.log('modal',open,1)
-    setOpen(true)
-   
-  }, []);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [product, setProduct] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-
   const [products, setProducts] = useState([]);
 
-  console.log('modal',open,2)
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
@@ -126,18 +85,7 @@ const App = () => {
 
   return (
     <>
-      {/* <div id="signInDiv"></div>
-      {Object.keys(user).length !== 0 && <button onClick={(e) => handleSignOut(e)}>Sign Out</button>}
-
-      {user &&
-        <div>
-          <img src={user.picture}></img>
-          <h3>{user.name}</h3>
-        </div>
-      }*/}
       <SubscribeModal /> 
-      {/* {open ? <BasicModal open={open}/> : null} */}
-      {/* <BasicModal/> */}
       <Router>
         <Routes>
           <Route index path="/" element={<LandingPage />} />

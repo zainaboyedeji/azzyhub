@@ -6,9 +6,9 @@ import azzyhubBanner from "../../assets/images/azzyhubBanner.jpg";
 const Banner = () => {
   return (
    <>
-    <div className='appBanner'>
+    {/* <div className='appBanner'>
      <h6> SEE UPDATES ON OUR REST OF NIGERIA DELIVERY TARIFFS</h6>
-     </div>
+     </div> */}
       <div className='deliveryBanner'>
         <img src={DeliveryBanner} alt="deliverybanner"/>
       </div>

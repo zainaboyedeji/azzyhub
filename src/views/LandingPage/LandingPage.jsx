@@ -3,6 +3,7 @@ import { Banner, FooterBanner, Navbar, Reviews, CategoriesBanner } from '../../c
 import LatestArrival from '../../components/LatestArrival/LatestArrival'
 import {Footer} from "../../components/index"
 import { commerce } from '../../lib/commerce'
+import BuyNowPayLaterBanner from '../../components/BuyNowPayLaterBanner/BuyNowPayLaterBanner'
 
 const LandingPage = () => {
   const [products, setProducts] = useState([]);
@@ -41,9 +42,10 @@ const LandingPage = () => {
 
   return (
     <div className="LandingPage">
+      <BuyNowPayLaterBanner/>
       <Navbar totalItems={cart?.total_items} />
       <Banner/>
-      <CategoriesBanner/>
+      {/* <CategoriesBanner/> */}
       <LatestArrival products={products} handleAddToCart={handleAddToCart}/>
       <Reviews/>
       <FooterBanner/>
